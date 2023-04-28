@@ -42,19 +42,25 @@ def generate_error_email(sender, recipient, subject, body):
 
 
 def send_email(message):
-    """Sends the message to the configured SMTP server."""
-    mail_server = smtplib.SMTP('localhost')
+    """
+    Sends the message from the configured SMTP server.
+    This function needs data of your email server
+    """
+    mail_server = smtplib.SMTP_SSL('smtp.server', 000)  # set your smtp server and port
+    mail_server.login('your_login', 'your_password')  # set your email login and password
     mail_server.send_message(message)
     mail_server.quit()
 
 
 def main():
-    """Main function with email data"""
-    sender = "lzerucha@gmail.com"
-    recipient = "elmirka113@gmail.com"
+    """
+    Main function with email data
+    """
+    sender = "example@example.com"
+    recipient = "test@test.com"
     subject = "Test email with attachment from Lukas' python application"
     body = "This is a body where contents of the email will normally be written"
-    attachment_path = "report.pdf"
+    attachment_path = "/path_to_attachment/file.jpg"
 
     message = generate_email(sender, recipient, subject, body, attachment_path)
     send_email(message)
