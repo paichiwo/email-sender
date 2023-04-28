@@ -53,7 +53,7 @@ def main():
     sender = "lzerucha@gmail.com"
     recipient = "elmirka113@gmail.com"
     subject = "Test email with attachment from Lukas' python application"
-    body = "This is a body wehre contents of the email will normally be written"
+    body = "This is a body where contents of the email will normally be written"
     attachment_path = "report.pdf"
 
     message = generate_email(sender, recipient, subject, body, attachment_path)
